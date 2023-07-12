@@ -2,6 +2,10 @@
 ro.kernel.ebpf.supported=false
 persist.sys.binary_xml=false
 
+ro.debuggable=1
+persist.service.adb.enable=1
+persist.sys.usb.config=adb
+
 # Audio
 audio.offload.buffer.size.kb=32
 audio.offload.gapless.enabled=false
