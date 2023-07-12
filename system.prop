@@ -1,3 +1,7 @@
+# bringup for 19.1
+ro.kernel.ebpf.supported=false
+persist.sys.binary_xml=false
+
 # Audio
 audio.offload.buffer.size.kb=32
 audio.offload.gapless.enabled=false
