@@ -48,6 +48,7 @@ on early-init
 
 on init
     write /proc/sys/vm/page-cluster 0
+    setprop ro.kernel.ebpf.supported false
 
 on fs
     wait /dev/block/platform/soc.0/${ro.boot.bootdevice}
