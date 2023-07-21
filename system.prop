@@ -1,3 +1,8 @@
+# Adb bring up
+ro.debuggable=1
+persist.service.adb.enable=1
+persist.sys.usb.config=adb
+
 # Audio
 audio.offload.buffer.size.kb=32
 audio.offload.gapless.enabled=false
