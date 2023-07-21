@@ -6,6 +6,7 @@ type proc_last_kmsg, fs_type, proc_type;
 type sysfs_camera, fs_type, sysfs_type;
 type sysfs_hal_pwr, fs_type, sysfs_type;
 type sysfs_iio, fs_type, sysfs_type;
+type sysfs_io_sched_tuneable, fs_type, sysfs_type;
 type sysfs_input, fs_type, sysfs_type;
 type sysfs_mdnie, fs_type, sysfs_type;
 type sysfs_module, fs_type, sysfs_type;
