@@ -87,8 +87,8 @@ TARGET_KERNEL_ADDITIONAL_FLAGS := \
 TARGET_HAS_MEMFD_BACKPORT := true
 
 # SELinux
-# include device/samsung/msm8226-common/sepolicy/sepolicy.mk
-BOARD_VENDOR_SEPOLICY_DIRS += device/samsung/msm8226-common/sepolicy-minimal
+include device/samsung/msm8226-common/sepolicy/sepolicy.mk
+# BOARD_VENDOR_SEPOLICY_DIRS += device/samsung/msm8226-common/sepolicy-minimal
 SELINUX_IGNORE_NEVERALLOWS := true
 
 # Partitions
