@@ -142,6 +142,7 @@ on charger
 
 on property:sys.boot_completed=1
     setprop vendor.post_boot.parsed 1
+    write /sys/module/lowmemorykiller/parameters/minfree "2560,5120,7680,8960,10240,12800"
     # Post boot services
     rm /data/system/perfd/default_values
     start mpdecision
