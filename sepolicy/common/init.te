@@ -15,3 +15,17 @@ allow init {
     proc_last_kmsg
 }:file setattr;
 
+#============= init ==============
+allow init hal_light_service:service_manager add;
+allow init hal_wifi_hwservice:hwservice_manager { add find };
+allow init hidl_base_hwservice:hwservice_manager add;
+allow init hwservicemanager:binder { call transfer };
+allow init self:netlink_generic_socket { bind create getattr read setopt write };
+allow init self:netlink_socket { bind create getattr read setopt };
+allow init servicemanager:binder { call transfer };
+allow init sysfs:file rw_file_perms;
+allow init sysfs:file setattr;
+allow init sysfs_sec_touchkey:file rw_file_perms;
+allow init sysfs_wifi_writeable:file rw_file_perms;
+allow init system_server:binder { call transfer };
+allow init vendor_file:file execute_no_trans;
