@@ -92,6 +92,14 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.4-service.clearkey
 
+# DRM files for drm 1.1
+# Normally these copy commands would go into vendor, but we are using github.com/TheMuppets and it's a big repo to fork
+# So let's just put into our device tree and keep it simple
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/vendor/bin/hw/android.hardware.drm@1.1-service.widevine:system/vendor/bin/hw/android.hardware.drm@1.1-service.widevine \
+    $(LOCAL_PATH)/vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc:system/vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc \
+    $(LOCAL_PATH)/vendor/lib/libwvhidl.so:system/vendor/lib/libwvhidl.so
+
 # fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
