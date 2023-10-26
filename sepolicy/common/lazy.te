@@ -1,0 +1,93 @@
+#============= audioserver ==============
+allow audioserver vendor_default_prop:file r_file_perms;
+
+#============= bluetooth_loader ==============
+allow bluetooth_loader default_prop:file r_file_perms;
+
+#============= crash_dump ==============
+allow crash_dump app_data_file:file r_file_perms;
+allow crash_dump bluetooth_data_file:file r_file_perms;
+allow crash_dump resourcecache_data_file:file r_file_perms;
+
+#============= firmware_file ==============
+allow firmware_file labeledfs:filesystem associate;
+
+#============= hal_audio_default ==============
+allow hal_audio_default audio_prop:file r_file_perms;
+
+#============= hal_gnss_default ==============
+allow hal_gnss_default system_prop:file r_file_perms;
+
+#============= hal_graphics_allocator_default ==============
+allow hal_graphics_allocator_default default_prop:file r_file_perms;
+
+#============= hal_graphics_composer_default ==============
+allow hal_graphics_composer_default default_prop:file r_file_perms;
+allow hal_graphics_composer_default system_prop:file r_file_perms;
+
+#============= hal_power_default ==============
+allow hal_power_default sysfs:file rw_file_perms;
+
+#============= init ==============
+allow init hal_light_service:service_manager add;
+allow init hal_wifi_hwservice:hwservice_manager { add find };
+allow init hidl_base_hwservice:hwservice_manager add;
+allow init hwservicemanager:binder { call transfer };
+allow init self:netlink_generic_socket { bind create getattr read setopt write };
+allow init self:netlink_socket { bind create getattr read setopt };
+allow init servicemanager:binder { call transfer };
+allow init sysfs:file rw_file_perms;
+allow init sysfs:file setattr;
+allow init sysfs_sec_touchkey:file rw_file_perms;
+allow init sysfs_wifi_writeable:file rw_file_perms;
+allow init system_server:binder { call transfer };
+allow init vendor_file:file execute_no_trans;
+
+#============= lmkd ==============
+allow lmkd cpuset_device:dir search;
+
+#============= mediacodec ==============
+allow mediacodec default_prop:file r_file_perms;
+
+#============= mediaprovider_app ==============
+# allow mediaprovider_app rootfs:file create_file_perms;
+
+#============= mediaserver ==============
+allow mediaserver vendor_default_prop:file r_file_perms;
+
+#============= mpdecision ==============
+allow mpdecision default_prop:file r_file_perms;
+
+#============= qmuxd ==============
+allow qmuxd default_prop:file r_file_perms;
+allow qmuxd radio_prop:file r_file_perms;
+
+#============= surfaceflinger ==============
+allow surfaceflinger cpuset_device:dir search;
+allow surfaceflinger vendor_default_prop:file r_file_perms;
+
+#============= system_app ==============
+allow system_app hal_power_default:binder call;
+allow system_app hal_wifi_supplicant_default:binder call;
+allow system_app system_suspend_control_internal_service:service_manager find;
+allow system_app default_android_service:service_manager find;
+
+#============= system_server ==============
+allow system_server build_bootimage_prop:file r_file_perms;
+allow system_server init:binder { call transfer };
+allow system_server vendor_security_patch_level_prop:file r_file_perms;
+
+#============= ueventd ==============
+allow ueventd proc:file r_file_perms;
+
+#============= vendor_init ==============
+allow vendor_init default_prop:file read;
+allow vendor_init default_prop:property_service set;
+allow vendor_init firmware_file:dir create_dir_perms ;
+allow vendor_init radio_core_data_file:dir create_dir_perms;
+allow vendor_init system_prop:file r_file_perms;
+allow vendor_init system_prop:property_service set;
+allow vendor_init vendor_mpctl_prop:property_service set;
+
+#============= vold ==============
+allow vold persist_data_file:dir r_dir_perms;

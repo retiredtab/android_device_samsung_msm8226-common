@@ -1,1 +1,6 @@
+# allow system_app system_suspend:binder call;
+
+allow system_app tracingproxy_service:service_manager find;
 binder_call(system_app, storaged)
+# If screen lock is set to none, tablet wakes up by itself after 10 seconds.
+binder_call(system_app, system_suspend)
