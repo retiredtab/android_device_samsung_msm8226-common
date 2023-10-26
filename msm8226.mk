@@ -49,6 +49,7 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-impl \
     android.hardware.audio.effect@7.0-impl \
     android.hardware.audio.service \
+    android.hardware.audio.service.msm8226 \
     audio.primary.msm8226 \
     audio.r_submix.default \
     audio.usb.default \
@@ -61,7 +62,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
     android.hardware.bluetooth@1.0-service \
-    libbt-vendor
+    libbt-vendor \
+    android.hardware.bluetooth.audio@2.0-impl \
+    audio.bluetooth.default
 
 # Boot animation
 TARGET_BOOTANIMATION_HALF_RES := true
