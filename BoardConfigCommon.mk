@@ -110,6 +110,7 @@ TARGET_USES_INTERACTION_BOOST := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # Properties
+TARGET_PRODUCT_PROP += device/samsung/msm8226-common/product.prop
 TARGET_SYSTEM_PROP += device/samsung/msm8226-common/system.prop
 
 # Recovery
